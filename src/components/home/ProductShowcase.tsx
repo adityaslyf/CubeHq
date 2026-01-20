@@ -23,40 +23,40 @@ export const ProductShowcase = () => {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 py-20">
-      <div className="flex flex-col lg:flex-row gap-16 items-start">
-        <div className="w-full lg:w-1/2 flex flex-col gap-8">
+    <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-12 md:py-20">
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-start">
+        <div className="w-full lg:w-1/2 flex flex-col gap-4 md:gap-8">
           <div className="relative w-full aspect-[610/673] rounded-[20px] overflow-hidden bg-[#d4d4d4]">
              <Image src={productImages[currentImageIndex]} alt="Product Main" fill className="object-cover" />
              
              <button 
                onClick={handlePrevImage}
-               className="absolute left-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-3 hover:bg-gray-50 shadow-md z-10 transition-all"
+               className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all"
              >
-               <Image src={ASSETS.imgIcon} alt="prev" width={20} height={20} />
+               <Image src={ASSETS.imgIcon} alt="prev" width={16} height={16} className="md:w-5 md:h-5" />
              </button>
              
              <button 
                onClick={handleNextImage}
-               className="absolute right-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-3 hover:bg-gray-50 shadow-md z-10 transition-all rotate-180"
+               className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all rotate-180"
              >
-               <Image src={ASSETS.imgIcon} alt="next" width={20} height={20} />
+               <Image src={ASSETS.imgIcon} alt="next" width={16} height={16} className="md:w-5 md:h-5" />
              </button>
 
-             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+             <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
                 {productImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentImageIndex ? 'bg-[#032e15] w-8' : 'bg-gray-400'
+                      index === currentImageIndex ? 'bg-[#032e15] w-6 md:w-8' : 'bg-gray-400'
                     }`}
                   />
                 ))}
              </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-2 md:gap-4">
              <button 
                onClick={() => setCurrentImageIndex(0)}
                className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer transition-all ${
@@ -91,32 +91,32 @@ export const ProductShowcase = () => {
              </button>
           </div>
           
-          <div className="grid grid-cols-4 gap-4">
-             <div className="relative aspect-square rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-4 gap-2 md:gap-4">
+             <div className="relative aspect-square rounded-xl md:rounded-2xl overflow-hidden">
                 <Image src={ASSETS.imgPexelsPixabay2648701} alt="ingredient" fill className="object-cover" />
              </div>
-             <div className="relative aspect-square rounded-2xl overflow-hidden">
+             <div className="relative aspect-square rounded-xl md:rounded-2xl overflow-hidden">
                 <Image src={ASSETS.imgPexelsRethaferguson30596092} alt="ingredient" fill className="object-cover" />
              </div>
-             <div className="relative aspect-square rounded-2xl overflow-hidden">
+             <div className="relative aspect-square rounded-xl md:rounded-2xl overflow-hidden">
                 <Image src={ASSETS.imgPexelsPixabay2649501} alt="ingredient" fill className="object-cover" />
              </div>
-             <div className="relative aspect-square rounded-2xl overflow-hidden">
+             <div className="relative aspect-square rounded-xl md:rounded-2xl overflow-hidden">
                 <Image src={ASSETS.imgPexelsValeriya19617821} alt="ingredient" fill className="object-cover" />
              </div>
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 flex flex-col gap-8">
+        <div className="w-full lg:w-1/2 flex flex-col gap-6 md:gap-8">
            <div>
               <div className="flex flex-col mb-2">
-                 <h2 className="text-[36px] font-semibold text-[#032e15] font-sans">GTG Perfumes</h2>
+                 <h2 className="text-[24px] sm:text-[30px] md:text-[36px] font-semibold text-[#032e15] font-sans">GTG Perfumes</h2>
                  <div className="flex items-center gap-2">
-                    <Image src={ASSETS.imgGroup1000003839} alt="stars" width={83} height={13} />
-                    <span className="text-[13px] font-light text-[#032e15] font-sans">4.7 (999+ reviews)</span>
+                    <Image src={ASSETS.imgGroup1000003839} alt="stars" width={70} height={11} className="md:w-[83px] md:h-[13px]" />
+                    <span className="text-[11px] md:text-[13px] font-light text-[#032e15] font-sans">4.7 (999+ reviews)</span>
                  </div>
               </div>
-              <p className="text-[16px] font-light text-[#032e15] text-justify leading-relaxed font-sans">
+              <p className="text-[14px] md:text-[16px] font-light text-[#032e15] text-justify leading-relaxed font-sans">
                 Experience the timeless allure backed by modern artistry, captured in every bottle of our fragrance. Crafted for those who seek to elevate their essence with purpose and sophistication.
               </p>
            </div>

@@ -9,12 +9,12 @@ export const StatsBar = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-b from-[#032e15] to-[#016630] py-16 text-white">
-       <div className="max-w-[1120px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12 px-4">
+    <div className="w-full bg-gradient-to-b from-[#032e15] to-[#016630] py-10 md:py-16 text-white">
+       <div className="max-w-[1120px] mx-auto flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12 px-4">
           {stats.map((stat, i) => (
-             <div key={i} className="flex flex-col items-center text-center gap-4 flex-1">
-                <span className="text-[40px] font-bold font-sans">{stat.value}</span>
-                <p className="text-[16px] font-light font-sans">{stat.label}</p>
+             <div key={i} className="flex flex-col items-center text-center gap-2 md:gap-4 flex-1">
+                <span className="text-[32px] md:text-[40px] font-bold font-sans">{stat.value}</span>
+                <p className="text-[14px] md:text-[16px] font-light font-sans">{stat.label}</p>
              </div>
           ))}
        </div>
