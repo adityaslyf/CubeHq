@@ -29,30 +29,32 @@ export const Hero = () => {
           </h1>
         </div>
 
-        <div className="flex gap-3 sm:gap-4 md:gap-6 items-start flex-wrap">
-          <div className="flex flex-col gap-1 w-[80px] sm:w-[120px] md:w-[150px]">
-            <span className="text-[40px] sm:text-[56px] md:text-[72px] font-bold bg-gradient-to-b from-[rgba(3,46,21,0.6)] to-[rgba(1,102,48,0.6)] bg-clip-text text-transparent leading-[1] font-sans">
+        <div className="flex gap-6 sm:gap-8 md:gap-12 items-start">
+          <div className="flex flex-col gap-1 min-w-[80px] sm:min-w-[100px] md:min-w-[120px]">
+            <span className="text-[40px] sm:text-[56px] md:text-[72px] font-bold bg-gradient-to-b from-[rgba(3,46,21,0.6)] to-[rgba(1,102,48,0.6)] bg-clip-text text-transparent leading-[0.9] font-sans">
               10x
             </span>
-            <span className="text-[#0d542b] text-[14px] sm:text-[18px] md:text-[22px] font-light font-sans">power</span>
+            <span className="text-[#0d542b] text-[14px] sm:text-[18px] md:text-[22px] font-light font-sans leading-tight">power</span>
           </div>
-          <div className="flex flex-col gap-1 w-[80px] sm:w-[120px] md:w-[150px]">
-            <span className="text-[40px] sm:text-[56px] md:text-[72px] font-bold bg-gradient-to-b from-[rgba(3,46,21,0.6)] to-[rgba(1,102,48,0.6)] bg-clip-text text-transparent leading-[1] font-sans">
+          <div className="flex flex-col gap-1 min-w-[80px] sm:min-w-[100px] md:min-w-[120px]">
+            <span className="text-[40px] sm:text-[56px] md:text-[72px] font-bold bg-gradient-to-b from-[rgba(3,46,21,0.6)] to-[rgba(1,102,48,0.6)] bg-clip-text text-transparent leading-[0.9] font-sans">
               9
             </span>
-            <span className="text-[#0d542b] text-[14px] sm:text-[18px] md:text-[22px] font-light font-sans">ingredients</span>
+            <span className="text-[#0d542b] text-[14px] sm:text-[18px] md:text-[22px] font-light font-sans leading-tight">ingredients</span>
           </div>
-          <div className="flex flex-col gap-1 w-[80px] sm:w-[120px] md:w-[150px]">
-            <span className="text-[40px] sm:text-[56px] md:text-[72px] font-bold bg-gradient-to-b from-[rgba(3,46,21,0.6)] to-[rgba(1,102,48,0.6)] bg-clip-text text-transparent leading-[1.2] font-sans pt-2 pb-1 block">
+          <div className="flex flex-col gap-1 min-w-[100px] sm:min-w-[120px] md:min-w-[150px]">
+            <span className="text-[40px] sm:text-[56px] md:text-[72px] font-bold bg-gradient-to-b from-[rgba(3,46,21,0.6)] to-[rgba(1,102,48,0.6)] bg-clip-text text-transparent leading-[0.9] font-sans">
               20K+
             </span>
-            <span className="text-[#0d542b] text-[14px] sm:text-[18px] md:text-[22px] font-light font-sans">happy customers</span>
+            <span className="text-[#0d542b] text-[14px] sm:text-[18px] md:text-[22px] font-light font-sans leading-tight whitespace-nowrap">happy customers</span>
           </div>
         </div>
 
-        <button className="bg-gradient-to-b from-[#032e15] to-[#016630] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full shadow-lg font-medium text-[14px] sm:text-[16px] md:text-[18px] hover:opacity-90 transition-opacity w-fit">
+<div className="mb-24">
+        <button className="bg-gradient-to-b from-[#032e15] to-[#016630] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full shadow-lg font-medium text-[14px] sm:text-[16px] md:text-[18px] hover:opacity-90 transition-opacity w-fit cursor-pointer">
           Shop Now
         </button>
+        </div>
       </div>
     </div>
   );

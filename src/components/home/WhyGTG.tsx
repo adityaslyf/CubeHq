@@ -135,7 +135,7 @@ export const WhyGTG = () => {
       </div>
 
       <div className="mt-8 md:mt-12">
-        <button className="bg-gradient-to-b from-[#032e15] to-[#016630] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-medium text-[16px] md:text-[20px] hover:opacity-90 transition-opacity">
+        <button className="bg-gradient-to-b from-[#032e15] to-[#016630] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-medium text-[16px] md:text-[20px] hover:opacity-90 transition-opacity cursor-pointer">
           Try It Risk-Free
         </button>
       </div>

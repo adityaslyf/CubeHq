@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Oxanium } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${oxanium.variable} antialiased font-sans`}
       >
+        <Toaster position="top-center" />
         {children}
       </body>
     </html>

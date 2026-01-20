@@ -31,14 +31,14 @@ export const ProductShowcase = () => {
              
              <button 
                onClick={handlePrevImage}
-               className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all"
+               className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all cursor-pointer"
              >
                <Image src={ASSETS.imgIcon} alt="prev" width={16} height={16} className="md:w-5 md:h-5" />
              </button>
              
              <button 
                onClick={handleNextImage}
-               className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all rotate-180"
+               className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all rotate-180 cursor-pointer"
              >
                <Image src={ASSETS.imgIcon} alt="next" width={16} height={16} className="md:w-5 md:h-5" />
              </button>
@@ -48,7 +48,7 @@ export const ProductShowcase = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
+                    className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
                       index === currentImageIndex ? 'bg-[#032e15] w-6 md:w-8' : 'bg-gray-400'
                     }`}
                   />
@@ -333,8 +333,8 @@ export const ProductShowcase = () => {
              </div>
            )}
 
-           <button className="w-full bg-gradient-to-b from-[#032e15] to-[#016630] text-white py-4 rounded-full font-medium text-[18px] hover:opacity-90 transition-opacity">
-              Add to Cart
+           <button className="w-full bg-gradient-to-b from-[#032e15] to-[#016630] text-white py-4 rounded-full font-medium text-[18px] hover:opacity-90 transition-opacity cursor-pointer">
+             Add to Cart
            </button>
 
         </div>
