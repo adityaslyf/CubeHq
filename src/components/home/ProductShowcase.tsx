@@ -109,7 +109,7 @@ export const ProductShowcase = () => {
 
         <div className="w-full lg:w-1/2 flex flex-col gap-8">
            <div>
-              <div className="flex justify-between items-center mb-2">
+              <div className="flex flex-col mb-2">
                  <h2 className="text-[36px] font-semibold text-[#032e15] font-sans">GTG Perfumes</h2>
                  <div className="flex items-center gap-2">
                     <Image src={ASSETS.imgGroup1000003839} alt="stars" width={83} height={13} />
