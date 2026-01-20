@@ -29,30 +29,32 @@ export const ProductShowcase = () => {
           <div className="relative w-full aspect-[610/673] rounded-[20px] overflow-hidden bg-[#d4d4d4]">
              <Image src={productImages[currentImageIndex]} alt="Product Main" fill className="object-cover" />
              
-             <button 
-               onClick={handlePrevImage}
-               className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all cursor-pointer"
-             >
-               <Image src={ASSETS.imgIcon} alt="prev" width={16} height={16} className="md:w-5 md:h-5" />
-             </button>
-             
-             <button 
-               onClick={handleNextImage}
-               className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md z-10 transition-all rotate-180 cursor-pointer"
-             >
-               <Image src={ASSETS.imgIcon} alt="next" width={16} height={16} className="md:w-5 md:h-5" />
-             </button>
+             <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex items-center justify-between px-3 md:px-6 z-10">
+               <button 
+                 onClick={handlePrevImage}
+                 className="bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md transition-all cursor-pointer"
+               >
+                 <Image src={ASSETS.imgIcon} alt="prev" width={16} height={16} className="md:w-5 md:h-5" />
+               </button>
+               
+               <div className="flex gap-2 items-center">
+                  {productImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`h-2 rounded-full transition-all cursor-pointer ${
+                        index === currentImageIndex ? 'bg-[#032e15] w-6 md:w-8' : 'bg-gray-400 w-2'
+                      }`}
+                    />
+                  ))}
+               </div>
 
-             <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-                {productImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                      index === currentImageIndex ? 'bg-[#032e15] w-6 md:w-8' : 'bg-gray-400'
-                    }`}
-                  />
-                ))}
+               <button 
+                 onClick={handleNextImage}
+                 className="bg-white border border-[#032e15] rounded-full p-2 md:p-3 hover:bg-gray-50 shadow-md transition-all rotate-180 cursor-pointer"
+               >
+                 <Image src={ASSETS.imgIcon} alt="next" width={16} height={16} className="md:w-5 md:h-5" />
+               </button>
              </div>
           </div>
 
