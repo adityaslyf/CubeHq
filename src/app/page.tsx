@@ -3,6 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { Collection } from "@/components/home/Collection";
 import { StatsBar } from "@/components/home/StatsBar";
+import { WhyGTG } from "@/components/home/WhyGTG";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ProductShowcase />
       <Collection />
       <StatsBar />
+      <WhyGTG />
     </main>
   );
 }
