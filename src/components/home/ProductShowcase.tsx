@@ -5,27 +5,92 @@ import { ASSETS } from "./assets";
 
 export const ProductShowcase = () => {
   const [selectedSubscription, setSelectedSubscription] = useState<"single" | "double">("single");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const productImages = [
+    ASSETS.imgRectangle6723,
+    ASSETS.imgPexelsPixabay2648701,
+    ASSETS.imgPexelsRethaferguson30596092,
+    ASSETS.imgPexelsPixabay2649501,
+  ];
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? productImages.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) => (prev === productImages.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 py-20">
       <div className="flex flex-col lg:flex-row gap-16 items-start">
         <div className="w-full lg:w-1/2 flex flex-col gap-8">
-          <div className="relative w-full aspect-[610/673] rounded-lg overflow-hidden">
-             <Image src={ASSETS.imgRectangle6723} alt="Product Main" fill className="object-cover" />
-          </div>
-          
-          <div className="flex items-center justify-between">
-             <div className="flex gap-4">
-               <button className="border border-[#032e15] rounded-full p-2 hover:bg-gray-50">
-                 <Image src={ASSETS.imgIcon} alt="prev" width={20} height={20} />
-               </button>
-               <button className="border border-[#032e15] rounded-full p-2 hover:bg-gray-50">
-                 <Image src={ASSETS.imgIcon1} alt="next" width={20} height={20} />
-               </button>
+          <div className="relative w-full aspect-[610/673] rounded-[20px] overflow-hidden bg-[#d4d4d4]">
+             <Image src={productImages[currentImageIndex]} alt="Product Main" fill className="object-cover" />
+             
+             <button 
+               onClick={handlePrevImage}
+               className="absolute left-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-3 hover:bg-gray-50 shadow-md z-10 transition-all"
+             >
+               <Image src={ASSETS.imgIcon} alt="prev" width={20} height={20} />
+             </button>
+             
+             <button 
+               onClick={handleNextImage}
+               className="absolute right-6 top-1/2 -translate-y-1/2 bg-white border border-[#032e15] rounded-full p-3 hover:bg-gray-50 shadow-md z-10 transition-all rotate-180"
+             >
+               <Image src={ASSETS.imgIcon} alt="next" width={20} height={20} />
+             </button>
+
+             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+                {productImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentImageIndex ? 'bg-[#032e15] w-8' : 'bg-gray-400'
+                    }`}
+                  />
+                ))}
              </div>
-             <Image src={ASSETS.imgSliderDots} alt="dots" width={56} height={8} />
           </div>
 
+          <div className="grid grid-cols-4 gap-4">
+             <button 
+               onClick={() => setCurrentImageIndex(0)}
+               className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer transition-all ${
+                 currentImageIndex === 0 ? 'ring-2 ring-[#032e15]' : 'hover:opacity-80'
+               }`}
+             >
+                <Image src={ASSETS.imgPexelsPixabay2648701} alt="ingredient" fill className="object-cover" />
+             </button>
+             <button 
+               onClick={() => setCurrentImageIndex(1)}
+               className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer transition-all ${
+                 currentImageIndex === 1 ? 'ring-2 ring-[#032e15]' : 'hover:opacity-80'
+               }`}
+             >
+                <Image src={ASSETS.imgPexelsRethaferguson30596092} alt="ingredient" fill className="object-cover" />
+             </button>
+             <button 
+               onClick={() => setCurrentImageIndex(2)}
+               className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer transition-all ${
+                 currentImageIndex === 2 ? 'ring-2 ring-[#032e15]' : 'hover:opacity-80'
+               }`}
+             >
+                <Image src={ASSETS.imgPexelsPixabay2649501} alt="ingredient" fill className="object-cover" />
+             </button>
+             <button 
+               onClick={() => setCurrentImageIndex(3)}
+               className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer transition-all ${
+                 currentImageIndex === 3 ? 'ring-2 ring-[#032e15]' : 'hover:opacity-80'
+               }`}
+             >
+                <Image src={ASSETS.imgPexelsValeriya19617821} alt="ingredient" fill className="object-cover" />
+             </button>
+          </div>
+          
           <div className="grid grid-cols-4 gap-4">
              <div className="relative aspect-square rounded-2xl overflow-hidden">
                 <Image src={ASSETS.imgPexelsPixabay2648701} alt="ingredient" fill className="object-cover" />
@@ -39,12 +104,6 @@ export const ProductShowcase = () => {
              <div className="relative aspect-square rounded-2xl overflow-hidden">
                 <Image src={ASSETS.imgPexelsValeriya19617821} alt="ingredient" fill className="object-cover" />
              </div>
-          </div>
-          <div className="grid grid-cols-4 gap-4 text-center">
-             <span className="text-[10px] md:text-xs text-white bg-black/50 p-1 rounded">Lion's Mane</span>
-             <span className="text-[10px] md:text-xs text-white bg-black/50 p-1 rounded">Cordyceps</span>
-             <span className="text-[10px] md:text-xs text-white bg-black/50 p-1 rounded">He Shou Wu</span>
-             <span className="text-[10px] md:text-xs text-white bg-black/50 p-1 rounded">Reishi</span>
           </div>
         </div>
 
